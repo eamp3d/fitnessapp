@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mi Progreso - Fitness App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#38e07b",
+            "background-light": "#f6f8f7",
+            "background-dark": "#122017",
+          },
+          fontFamily: {
+            "display": ["Lexend", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 p-4 pb-2 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="text-gray-800 dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Mi Progreso</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-gray-800 dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">add_chart</span>
+</button>
+</div>
+</div>
+<!-- Tabs Navigation -->
+<div class="sticky top-[72px] z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex border-b border-gray-200 dark:border-white/20 px-4 justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-gray-900 dark:text-white pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Cuerpo</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Rendimiento</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Fotos</p>
+</a>
+</div>
+</div>
+<main class="flex-1 pb-24">
+<!-- Segmented Buttons for Date Range -->
+<div class="flex px-4 py-3">
+<div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-gray-200 dark:bg-white/10 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-background-light has-[:checked]:dark:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-gray-900 has-[:checked]:dark:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">1M</span>
+<input class="invisible w-0" name="date-range" type="radio" value="1M"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-background-light has-[:checked]:dark:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-gray-900 has-[:checked]:dark:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">3M</span>
+<input checked="" class="invisible w-0" name="date-range" type="radio" value="3M"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-background-light has-[:checked]:dark:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-gray-900 has-[:checked]:dark:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">6M</span>
+<input class="invisible w-0" name="date-range" type="radio" value="6M"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-background-light has-[:checked]:dark:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-gray-900 has-[:checked]:dark:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">1A</span>
+<input class="invisible w-0" name="date-range" type="radio" value="1A"/>
+</label>
+</div>
+</div>
+<!-- Key Stats Cards -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-gray-200 dark:border-white/20 bg-background-light dark:bg-background-dark p-6">
+<p class="text-gray-800 dark:text-white text-base font-medium leading-normal">Peso Actual</p>
+<p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">75kg</p>
+<p class="text-red-500 text-base font-medium leading-normal">-2kg</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-gray-200 dark:border-white/20 bg-background-light dark:bg-background-dark p-6">
+<p class="text-gray-800 dark:text-white text-base font-medium leading-normal">% Grasa Corporal</p>
+<p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">18%</p>
+<p class="text-red-500 text-base font-medium leading-normal">-1.5%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-gray-200 dark:border-white/20 bg-background-light dark:bg-background-dark p-6">
+<p class="text-gray-800 dark:text-white text-base font-medium leading-normal">Fuerza General</p>
+<p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">110kg</p>
+<p class="text-primary text-base font-medium leading-normal">+5kg</p>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="flex flex-col gap-6 px-4 py-2">
+<!-- Weight Evolution Chart -->
+<div class="flex flex-col gap-2 rounded-xl border border-gray-200 dark:border-white/20 p-6">
+<p class="text-gray-800 dark:text-white text-base font-medium leading-normal">Evolución del Peso</p>
+<p class="text-gray-900 dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">75 kg</p>
+<div class="flex gap-1">
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Últimos 3 meses</p>
+<p class="text-red-500 text-base font-medium leading-normal">-2kg</p>
+</div>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_chart)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#38e07b" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#38e07b" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#38e07b" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-around">
+<p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Ene</p>
+<p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Feb</p>
+<p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Mar</p>
+</div>
+</div>
+</div>
+<!-- Body Measurements Chart -->
+<div class="flex flex-col gap-2 rounded-xl border border-gray-200 dark:border-white/20 p-6">
+<p class="text-gray-800 dark:text-white text-base font-medium leading-normal">Medidas Corporales</p>
+<p class="text-gray-900 dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">Cintura</p>
+<div class="flex gap-1">
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Últimos 3 meses</p>
+<p class="text-red-500 text-base font-medium leading-normal">-3cm</p>
+</div>
+<div class="grid min-h-[180px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3 pt-4">
+<div class="bg-primary/30 w-full rounded-t" style="height: 50%;"></div>
+<p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Ene</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 40%;"></div>
+<p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Feb</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 30%;"></div>
+<p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Mar</p>
+</div>
+</div>
+<!-- AI Insight Card -->
+<div class="flex items-start gap-4 rounded-xl border border-gray-200 dark:border-white/20 bg-primary/20 dark:bg-primary/10 p-4">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">auto_awesome</span>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white font-semibold">Análisis de IA</p>
+<p class="text-gray-600 dark:text-gray-300 text-sm">Tu progreso en el último mes es un 15% más rápido que el promedio. ¡Sigue así!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-6 right-6 z-20">
+<button class="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-background-dark shadow-lg transition-transform hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined text-4xl">add</span>
+</button>
+</div>
+</div>
+</body></html>
